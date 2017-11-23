@@ -1,0 +1,29 @@
+{
+  "name": "sms-function-response",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmcshane/sms-function-response.git"
+  },
+  "keywords": [
+    "sms",
+    "gcloud",
+    "function"
+  ],
+  "author": "jmcshane <jmcshan1@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jmcshane/sms-function-response/issues"
+  },
+  "homepage": "https://github.com/jmcshane/sms-function-response#readme",
+  "dependencies": {
+    "@google-cloud/datastore": "^1.1.0",
+    "cloud-functions-runtime-config": "^0.2.0",
+    "twilio": "^3.10.0"
+  }
+}

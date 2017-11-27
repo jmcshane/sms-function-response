@@ -66,7 +66,7 @@ function savePokerResult(requestBody, res) {
       }
       const resultEntity = {
         key: key,
-        data: {result : parseBody(requestBody.Body), time: parseDate(), player: entity.name}
+        data: {result : parseBody(requestBody.Body), resultDate: parseDate(), player: entity.name}
       };
       return datastore.save(resultEntity);
     })

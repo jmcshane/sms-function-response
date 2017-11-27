@@ -28,7 +28,7 @@ function savePlayer(requestBody, res) {
   datastore.save(entity)
       .then(() => {
         console.log("Saved complete");
-        textResponse('You have been registered for the Olson poker game. Submit results as "Up 5" or "Down 3".');
+        textResponse(res,'You have been registered for the Olson poker game. Submit results as "Up 5" or "Down 3".');
       })
       .catch((err)=> {
         console.error(err);
@@ -62,7 +62,7 @@ function savePokerResult(requestBody, res) {
   datastore.get(playerKey)
     .then(([entity]) => {
       if (!entity) {
-        textResponse('Please register by replying "My name is <NAME>", then submit your result');
+        textResponse(res,'Please register by replying "My name is <NAME>", then submit your result');
       }
       const resultEntity = {
         key: key,
@@ -71,7 +71,7 @@ function savePokerResult(requestBody, res) {
       return datastore.save(resultEntity);
     })
     .then(() => {
-      textResponse('Result successfully saved');
+      textResponse(res,'Result successfully saved');
     })
     .catch((err) => {
       console.error(err);

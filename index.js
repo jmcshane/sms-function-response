@@ -20,7 +20,7 @@ function buildPlayerKey(number) {
 
 function savePlayer(requestBody, res) {
   const key = buildPlayerKey(requestBody.From);
-  const playerName = requestBody.Body.replace(/my name is\s*/i,'');
+  const playerName = requestBody.Body.replace(/my name is\s*/i,'').trim();
   const entity = {
     key: key,
     data: {name : playerName}

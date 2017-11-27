@@ -97,7 +97,7 @@ function emptyResponse(res, status) {
 
 function textResponse(res, text) {
   const response = new MessagingResponse();
-  response.message('Please register by replying "My name is <Your Name>", then resubmit your result');
+  response.message(text);
   res
     .status(200)
     .type('text/xml')

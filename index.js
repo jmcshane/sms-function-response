@@ -79,7 +79,7 @@ function savePokerResult(requestBody, res) {
     });
 }
 
-function validate(isAppRunning, tokenValue) {
+function validate(isAppRunning, tokenValue, req) {
   if (isAppRunning === 'Running') {
     return twilio.validateExpressRequest(req, tokenValue, {
       url: `https://${region}-${projectId}.cloudfunctions.net/reply`
@@ -107,7 +107,7 @@ function textResponse(res, text) {
 exports.reply = (req, res) => {
   Promise.all([isLive, authToken]).then(values => {
     console.log(values);
-    if (!validate(values[0], values[1])) {
+    if (!validate(values[0], values[1], req)) {
       res
       .type('text/plain')
       .status(403)
